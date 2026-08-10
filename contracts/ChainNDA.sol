@@ -6,6 +6,7 @@ contract ChainNDA {
     address public partyB;
 
     bytes32 public termsHash;
+    uint256 public createdAt;
 
     bool public partyAAccepted;
     bool public partyBAccepted;
@@ -14,6 +15,7 @@ contract ChainNDA {
         partyA = msg.sender;
         partyB = _partyB;
         termsHash = _termsHash;
+        createdAt = block.timestamp;
     }
 
     function acceptAgreement() public {
